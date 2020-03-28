@@ -4,6 +4,7 @@ import { fetchStores } from './MockApi';
 import styles from './App.module.css';
 import logo from './storeLogo.png';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 function App(): React.ReactElement {
   const [stores, setStores] = useState<Store[]>([]);
@@ -17,19 +18,31 @@ function App(): React.ReactElement {
       <header className={styles.header}></header>
       <main>
         <div className={styles.storeContainer}>
-          <ul>
+          <ul className={styles.storeList}>
             {stores.map((store: Store) => {
               return (
                 <li key={store.id}>
-                  <Card style={{ width: '18rem' }}>
+                  <Card className={styles.storeItem}>
                     <Card.Img variant="top" src={logo} />
                     <Card.Body>
-                      <Card.Title>{store.name}</Card.Title>
-                      <Card.Text>{store.address}</Card.Text>
-                      <Card.Text>{store.suburb}</Card.Text>
-                      <Card.Text>{store.zipCode}</Card.Text>
-                      <Card.Text>{store.deliveryRadiusKm}</Card.Text>
-                      <Card.Text>{store.category}</Card.Text>
+                      <Card.Title className={styles.storeField}>
+                        {store.name}
+                      </Card.Title>
+                      <Card.Text className={styles.storeField}>
+                        Endereço: {store.address}
+                      </Card.Text>
+                      <Card.Text className={styles.storeField}>
+                        Bairro: {store.suburb}
+                      </Card.Text>
+                      <Card.Text className={styles.storeField}>
+                        Raio de entrega: {store.deliveryRadiusKm} Km
+                      </Card.Text>
+                      <Card.Text className={styles.storeField}>
+                        Categoria: {store.category}
+                      </Card.Text>
+                      <Button className={styles.storeDetail} variant="primary">
+                        Entrar na loja
+                      </Button>
                     </Card.Body>
                   </Card>
                 </li>

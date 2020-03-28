@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import { Store } from './Types';
 import { fetchStores } from './MockApi';
+import styles from './App.module.css';
+import logo from './storeLogo.png';
+import Card from 'react-bootstrap/Card';
 
 function App(): React.ReactElement {
   const [stores, setStores] = useState<Store[]>([]);
@@ -11,24 +13,25 @@ function App(): React.ReactElement {
   });
 
   return (
-    <div className="App">
-      <header className="App-header"></header>
+    <div>
+      <header className={styles.header}></header>
       <main>
-        <div className="sideNav"></div>
-        <div className="storeContainer">
+        <div className={styles.storeContainer}>
           <ul>
             {stores.map((store: Store) => {
               return (
                 <li key={store.id}>
-                  <div className="card">
-                    <div className="logo"></div>
-                    <h3>{store.name}</h3>
-                    <div>{store.address}</div>
-                    <div>{store.suburb}</div>
-                    <div>{store.zipCode}</div>
-                    <div>{store.deliveryRadiusKm}</div>
-                    <div>{store.category}</div>
-                  </div>
+                  <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={logo} />
+                    <Card.Body>
+                      <Card.Title>{store.name}</Card.Title>
+                      <Card.Text>{store.address}</Card.Text>
+                      <Card.Text>{store.suburb}</Card.Text>
+                      <Card.Text>{store.zipCode}</Card.Text>
+                      <Card.Text>{store.deliveryRadiusKm}</Card.Text>
+                      <Card.Text>{store.category}</Card.Text>
+                    </Card.Body>
+                  </Card>
                 </li>
               );
             })}

@@ -1,7 +1,7 @@
 import { Store } from './Types';
 
 const fakeStores: Store[] = [
-  {
+  { 
     id: 1,
     name: 'Fruteira do Zé',
     address: 'Rua que tem um nome, 10',

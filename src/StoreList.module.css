@@ -1,6 +1,5 @@
 .storeContainer {
-  max-width: 1080px;
-  margin: auto;
+  composes: container from './App.module.css';
 }
 
 .storeList {
@@ -34,5 +33,6 @@
     width: auto;
     height: auto;
     min-height: 42rem;
+    margin: 1rem 0;
   }
 }

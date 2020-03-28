@@ -1,0 +1,27 @@
+.storeContainer {
+  position: relative;
+  composes: container from './App.module.css';
+}
+
+.storeBasicContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.storeName {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .storeBasicContainer {
+    width: 100%;
+  }
+}

@@ -8,12 +8,12 @@ import {
   RouteProps
 } from 'react-router-dom';
 import StoreList from './StoreList';
-import StoreDetail from './StoreDetail';
+import Store from './Store';
 
 const routes: RouteProps[] = [
   {
     path: '/stores/:storeId',
-    component: StoreDetail
+    component: Store
   },
   {
     path: '/',
@@ -35,8 +35,8 @@ function App(): React.ReactElement {
       </header>
       <main>
         <Switch>
-          {routes.map(route => (
-            <Route {...route} />
+          {routes.map((route, i) => (
+            <Route key={i} {...route} />
           ))}
         </Switch>
       </main>

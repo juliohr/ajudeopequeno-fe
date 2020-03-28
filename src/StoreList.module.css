@@ -1,0 +1,38 @@
+.storeContainer {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.storeList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.storeField {
+  height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.storeItem {
+  width: 24rem;
+  height: 42rem;
+  margin: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.storeDetail {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .storeItem {
+    width: auto;
+    height: auto;
+    min-height: 42rem;
+  }
+}

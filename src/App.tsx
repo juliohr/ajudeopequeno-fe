@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './App.module.css';
+import './index.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,13 +8,14 @@ import {
   Link,
   RouteProps
 } from 'react-router-dom';
+import { FiPower } from 'react-icons/fi';
 import StoreList from './StoreList';
 import Store from './Store/Store';
 import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
 const routes: RouteProps[] = [
   {
-    path: '/stores/:storeId',
+    path: '/loja/:storeId',
     component: Store
   },
   {
@@ -34,9 +36,14 @@ function App(): React.ReactElement {
         <nav>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link to="/" style={{ textDecoration: 'none' }}>
+              <Link to="/" className={styles.button}>
                 Todas as lojas
               </Link>
+            </li>
+            <li className={styles.navItem}>
+              <button type="button" className={styles.buttonLogout}>
+                <FiPower size={18} color="#E02041" className={styles.buttonLogoutI}/>
+              </button>
             </li>
           </ul>
         </nav>

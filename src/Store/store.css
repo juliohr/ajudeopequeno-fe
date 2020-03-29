@@ -1,0 +1,32 @@
+.container-loja{
+    width: 100%;
+    max-width: 1120px;
+    height: auto;
+    margin: 50px auto;
+    display: block;
+}
+
+.info-loja{
+    width: 100%;
+    padding: 10px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.container-loja .info-loja img{
+    width: 30%;
+}
+
+.container-loja .info-loja .descricao-loja{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+.container-loja .info-loja .descricao-loja p{
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: 400;
+}

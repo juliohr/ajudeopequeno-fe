@@ -1,3 +1,4 @@
+
 .container {
   max-width: 1080px;
   margin: auto;
@@ -9,42 +10,62 @@
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  height: 8rem;
-  width: 100%;
+  /* background: #ddd; */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #3498db;
-  color: #fff;
-  z-index: 999;
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  justify-content: flex-end;
+  line-height: 8vh;
 }
 
 .brand {
   position: absolute;
-  font-size: 1.5rem;
   left: 2rem;
   width: 100px;
+  margin-top: 10px;
 }
 
 .navList {
   display: flex;
-  margin: 0;
+  flex-direction: row;
 }
 
 .navItem {
-  font-size: 1.4rem;
+  list-style: none;
+  padding-left: 20px;  
+  color: #666666;
+  font-size: 18px;
+}
+.button{
+  background-color: #3498db;
+  border: 0;
+  border-radius: 3px;
   color: #fff;
-  margin: 0 0.75rem;
-  padding: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+.button:hover{
+  text-decoration: none;
+}
+.buttonLogout{
+    width: 40px;
+    height: 40px;
+    margin-top: 13px;
+    margin-right: 50px;
+    border-radius: 4px;
+    border: 1px solid #dcdce6;
+    background: transparent;
+    transition: border-color 0.2s;
 }
 
-.navItem:hover {
+.buttonLogoutI{
+  margin-top: -30px;
+}
+
+/* .navItem:hover {
   border: 2px solid #fff;
   border-radius: 10px;
-}
+} */
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
   .container {

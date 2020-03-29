@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import StoreList from './StoreList';
 import Store from './Store';
+import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
 const routes: RouteProps[] = [
   {
@@ -25,10 +26,17 @@ function App(): React.ReactElement {
   return (
     <Router>
       <header className={styles.header}>
+        <img
+          className={styles.brand}
+          src={ajudeoPequeno}
+          alt="ajude o pequeno logo"
+        />
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <Link to="/" style={{ textDecoration: 'none' }}>
+                Todas as lojas
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,6 @@
 .storeContainer {
   position: relative;
-  composes: container from './App.module.css';
+  composes: container from '../App.module.css';
 }
 
 .storeBasicContainer {

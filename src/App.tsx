@@ -8,7 +8,7 @@ import {
   RouteProps
 } from 'react-router-dom';
 import StoreList from './StoreList';
-import Store from './Store';
+import Store from './Store/Store';
 import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
 const routes: RouteProps[] = [

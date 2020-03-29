@@ -1,6 +1,6 @@
 .storeContainer {
   position: relative;
-  composes: container from './App.module.css';
+  composes: container from '../App.module.css';
 }
 
 .storeBasicContainer {
@@ -20,6 +20,14 @@
   margin-bottom: 2rem;
 }
 
+.addProduct {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.formContainer {
+  width: 100%;
+}
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
   .storeBasicContainer {
     width: 100%;

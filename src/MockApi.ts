@@ -1,4 +1,4 @@
-import { StoreBasic, Product } from './Types';
+import { StoreBasic } from './Types';
 
 const fakeStores: StoreBasic[] = [
   {
@@ -57,33 +57,16 @@ const fakeStores: StoreBasic[] = [
   }
 ];
 
-const fakeProducts: Product[] = [
-  {
-    id: 1,
-    name: 'batata',
-    description: 'comida batata'
-  },
-  {
-    id: 2,
-    name: 'cenoura',
-    description: 'comida cenoura'
-  },
-  {
-    id: 3,
-    name: 'arroz',
-    description: 'comida arroz'
-  }
-];
 function delay(ms: number) {
   new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function fetchStores() {
+export async function fetchStores(): Promise<StoreBasic[]> {
   await delay(300);
   return fakeStores;
 }
 
-export async function fetchStore(id: string) {
+export async function fetchStore(id: string): Promise<StoreBasic> {
   await delay(300);
-  return { ...fakeStores[parseInt(id) - 1], products: fakeProducts };
+  return { ...fakeStores[parseInt(id) - 1] };
 }

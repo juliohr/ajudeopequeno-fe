@@ -51,7 +51,7 @@ function Store(props: RouteComponentProps<StoreParams>): React.ReactElement {
     return (
       <div className={styles.storeContainer}>
         <div className={styles.storeBasicContainer}>
-          <img src={logo} alt="logo da loja" />
+          <img className={styles.image} src={logo} alt="logo da loja" />
           <h1 className={styles.storeName}>{store.name}</h1>
           <div>Endereço: {store.address}</div>
           <div>Bairro: {store.suburb}</div>

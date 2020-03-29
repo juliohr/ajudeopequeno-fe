@@ -5,5 +5,58 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  padding: 2rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  height: 8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3498db;
+  color: #fff;
+  z-index: 999;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.brand {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 2rem;
+  width: 100px;
+}
+
+.navList {
+  display: flex;
+  margin: 0;
+}
+
+.navItem {
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0 0.75rem;
   padding: 1rem;
+}
+
+.navItem:hover {
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .brand {
+    position: relative;
+    left: 0;
+  }
+
+  .navList {
+    display: none;
+  }
 }

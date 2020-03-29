@@ -15,8 +15,19 @@ body {
 
 ul {
   padding: 0;
+  margin: 0;
+  margin-bottom: 0;
 }
 
 li {
   list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
 }

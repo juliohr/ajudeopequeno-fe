@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.module.css';
-import './index.css';
+import { Button } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +15,7 @@ import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
 const routes: RouteProps[] = [
   {
-    path: '/loja/:storeId',
+    path: '/store/:storeId',
     component: Store
   },
   {
@@ -36,14 +36,14 @@ function App(): React.ReactElement {
         <nav>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link to="/" className={styles.button}>
-                Todas as lojas
+              <Link to="/">
+                <Button size="lg">Todas as lojas</Button>
               </Link>
             </li>
             <li className={styles.navItem}>
-              <button type="button" className={styles.buttonLogout}>
-                <FiPower size={18} color="#E02041" className={styles.buttonLogoutI}/>
-              </button>
+              <Button variant="light">
+                <FiPower size={24} color="#E02041" />
+              </Button>
             </li>
           </ul>
         </nav>

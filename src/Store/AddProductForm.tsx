@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Product, Quantity } from '../Types';
 import { FiPlusCircle } from 'react-icons/fi';
-import './AddProductForm.css';
 
 type FormProduct = { name: string | null; description: string | null };
 
@@ -92,11 +91,10 @@ function AddProductForm({
           />
         </Form.Group>
         <Button onClick={onAddProductClick} variant="primary">
-        <FiPlusCircle color="#FFF" size={15}/> Adicionar
-      </Button>
+          <FiPlusCircle color="#FFF" size={15} /> Adicionar
+        </Button>
       </Form>
     </div>
-
   );
 }
 

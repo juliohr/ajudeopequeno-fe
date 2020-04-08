@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Product, Quantity } from '../Types';
+import { FiPlusCircle } from 'react-icons/fi';
 
 type FormProduct = { name: string | null; description: string | null };
 
@@ -60,37 +61,40 @@ function AddProductForm({
   }
 
   return (
-    <Form>
-      <Form.Group controlId="formProduct">
-        <Form.Label>Produto</Form.Label>
-        <Form.Control
-          onChange={setName}
-          type="text"
-          placeholder="Nome do produto"
-        />
-      </Form.Group>
+    <div>
+      <h1>Adicionar Produto</h1>
+      <Form>
+        <Form.Group controlId="formProduct">
+          <Form.Label>Produto</Form.Label>
+          <Form.Control
+            onChange={setName}
+            type="text"
+            placeholder="Nome do produto"
+          />
+        </Form.Group>
 
-      <Form.Group controlId="formDescription">
-        <Form.Label>Descrição</Form.Label>
-        <Form.Control
-          onChange={setDescription}
-          type="text"
-          placeholder="Descrição (opcional)"
-        />
-      </Form.Group>
-      <Form.Group controlId="quantity">
-        <Form.Label>Quantitade</Form.Label>
+        <Form.Group controlId="formDescription">
+          <Form.Label>Descrição</Form.Label>
+          <Form.Control
+            onChange={setDescription}
+            type="text"
+            placeholder="Descrição (opcional)"
+          />
+        </Form.Group>
+        <Form.Group controlId="quantity">
+          <Form.Label>Quantitade</Form.Label>
 
-        <Form.Control
-          onChange={setQuantity}
-          type="number"
-          placeholder="Quantitade"
-        />
-      </Form.Group>
-      <Button onClick={onAddProductClick} variant="primary">
-        + Adicionar
-      </Button>
-    </Form>
+          <Form.Control
+            onChange={setQuantity}
+            type="number"
+            placeholder="Quantitade"
+          />
+        </Form.Group>
+        <Button onClick={onAddProductClick} variant="primary">
+          <FiPlusCircle color="#FFF" size={15} /> Adicionar
+        </Button>
+      </Form>
+    </div>
   );
 }
 

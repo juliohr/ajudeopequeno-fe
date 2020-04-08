@@ -1,33 +1,35 @@
 .storeContainer {
-  position: relative;
-  composes: container from '../App.module.css';
+  width: 100%;
+  max-width: 1120px;
+  height: auto;
+  margin: 50px auto;
+  display: block;
 }
-
-.storeBasicContainer {
-  position: relative;
+.storeInfo {
+  width: 100%;
+  padding: 10px;
+  background: #f0f0f5;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+  flex-direction: row;
+  margin-bottom: 20px;
 }
-
-.storeName {
-  text-align: center;
-}
-
 .image {
-  width: 100%;
-  margin-bottom: 2rem;
+  width: 30%;
 }
 
-.addProduct {
-  align-self: flex-start;
-  margin-bottom: 0.5rem;
+.storeDescription {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+.StoreDetails {
+  font-size: 15px;
+  margin-left: 5px;
+  font-weight: 400;
 }
 
-.formContainer {
-  width: 100%;
-}
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
   .storeBasicContainer {
     width: 100%;

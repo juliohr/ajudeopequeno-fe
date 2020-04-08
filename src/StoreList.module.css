@@ -9,9 +9,10 @@
 }
 
 .storeField {
-  height: 3rem;
+  padding: 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 1.1rem;
 }
 
 .storeItem {
@@ -23,9 +24,8 @@
 }
 
 .storeDetail {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {

@@ -41,16 +41,26 @@ class Store extends React.Component<
     if (store) {
       return (
         <div className={styles.storeContainer}>
-          <div className={styles.storeBasicContainer}>
-            <img className={styles.image} src={logo} alt="logo da loja" />
-            <h1 className={styles.storeName}>{store.name}</h1>
-            <div>Endereço: {store.address}</div>
-            <div>Bairro: {store.suburb}</div>
-            <div>Raio de Entrega: {store.deliveryRadiusKm} Km</div>
-            <div>Categoria: {store.category}</div>
+          <div className={styles.storeInfo}>
+            <img src={logo} alt="logo da loja" className={styles.image} />
+            <div className={styles.storeDescription}>
+              <h1>{store.name}</h1>
+              <div className={styles.StoreDetails}>
+                Endereço: {store.address}
+              </div>
+              <div className={styles.StoreDetails}>Bairro: {store.suburb}</div>
+              <div className={styles.StoreDetails}>
+                Raio de Entrega: {store.deliveryRadiusKm} Km
+              </div>
+              <div className={styles.StoreDetails}>
+                Categoria: {store.category}
+              </div>
+            </div>
+            <div>
+              <AddProductForm addProduct={this.addProduct} />
+            </div>
           </div>
           <CartTable cart={cart} />
-          <AddProductForm addProduct={this.addProduct} />
         </div>
       );
     }

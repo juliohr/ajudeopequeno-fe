@@ -61,7 +61,7 @@ function AddProductForm({
   }
 
   return (
-    <div className="form-content">
+    <div>
       <h1>Adicionar Produto</h1>
       <Form>
         <Form.Group controlId="formProduct">

@@ -15,7 +15,7 @@ import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
 const routes: RouteProps[] = [
   {
-    path: '/store/:storeId',
+    path: '/stores/:storeId',
     component: Store
   },
   {

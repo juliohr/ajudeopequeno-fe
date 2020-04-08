@@ -9,7 +9,7 @@
 }
 
 .storeField {
-  padding: 6px;
+  padding: 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.1rem;

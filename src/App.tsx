@@ -6,22 +6,23 @@ import {
   Switch,
   Route,
   Link,
-  RouteProps
+  RouteProps,
 } from 'react-router-dom';
 import { FiPower } from 'react-icons/fi';
 import StoreList from './StoreList';
 import Store from './Store/Store';
 import ajudeoPequeno from './ajude-o-pequeno-logo.png';
+import Citys from './components/CityList';
 
 const routes: RouteProps[] = [
   {
     path: '/store/:storeId',
-    component: Store
+    component: Store,
   },
   {
     path: '/',
-    component: StoreList
-  }
+    component: StoreList,
+  },
 ];
 
 function App(): React.ReactElement {
@@ -49,6 +50,7 @@ function App(): React.ReactElement {
         </nav>
       </header>
       <main>
+        <Citys />
         <Switch>
           {routes.map((route, i) => (
             <Route key={i} {...route} />

@@ -38,7 +38,10 @@ function StoreList(): React.ReactElement {
                   <Card.Text className={styles.storeField}>
                     Categoria: {store.category}
                   </Card.Text>
-                  <Link to={`store/${store.id}`} className={styles.storeDetail}>
+                  <Link
+                    to={`/stores/${store.id}`}
+                    className={styles.storeDetail}
+                  >
                     <Button variant="primary">Entrar na loja</Button>
                   </Link>
                 </Card.Body>

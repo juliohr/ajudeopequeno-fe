@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './StoreView.module.css';
 import logo from '../storeLogo.png';
+import ProductsGrid from './ProductsGrid';
 import { Store, Product, Cart, Quantity } from '../Types';
 import { RouteComponentProps } from 'react-router-dom';
 import { fetchStore } from '../MockApi';
-import CartTable from './CartTable';
 
 type StoreState = {
   store: Store | null;
@@ -35,7 +35,7 @@ class StoreView extends React.Component<
   };
 
   render(): React.ReactElement {
-    const { store, cart } = this.state;
+    const { store } = this.state;
 
     if (store) {
       const { name, address, suburb, deliveryRadiusKm, category } = store.info;
@@ -53,7 +53,7 @@ class StoreView extends React.Component<
               <div className={styles.StoreDetails}>Categoria: {category}</div>
             </div>
           </div>
-          <CartTable cart={cart} />
+          <ProductsGrid products={store.products} />
         </div>
       );
     }

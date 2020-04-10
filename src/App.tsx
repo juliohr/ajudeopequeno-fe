@@ -6,22 +6,22 @@ import {
   Switch,
   Route,
   Link,
-  RouteProps
+  RouteProps,
 } from 'react-router-dom';
 import { FiPower } from 'react-icons/fi';
 import StoreList from './StoreList';
-import Store from './Store/Store';
+import StoreView from './Store/StoreView';
 import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
 const routes: RouteProps[] = [
   {
     path: '/stores/:storeId',
-    component: Store
+    component: StoreView,
   },
   {
     path: '/',
-    component: StoreList
-  }
+    component: StoreList,
+  },
 ];
 
 function App(): React.ReactElement {

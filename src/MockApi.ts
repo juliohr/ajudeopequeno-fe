@@ -1,6 +1,6 @@
-import { StoreBasic } from './Types';
+import { StoreInfo, Product, Store } from './Types';
 
-const fakeStores: StoreBasic[] = [
+const fakeStores: StoreInfo[] = [
   {
     id: 1,
     name: 'Fruteira do Zé',
@@ -8,7 +8,7 @@ const fakeStores: StoreBasic[] = [
     suburb: 'Pinheiros',
     zipCode: '123456-789',
     deliveryRadiusKm: 10,
-    category: ['fruteira']
+    category: ['fruteira'],
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const fakeStores: StoreBasic[] = [
     suburb: 'Boa Vista',
     zipCode: '789123-456',
     deliveryRadiusKm: 2,
-    category: ['café']
+    category: ['café'],
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const fakeStores: StoreBasic[] = [
     suburb: 'Copacabana',
     zipCode: '775741-111',
     deliveryRadiusKm: 4,
-    category: ['restaurante']
+    category: ['restaurante'],
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const fakeStores: StoreBasic[] = [
     suburb: 'Tabuão',
     zipCode: '432765-333',
     deliveryRadiusKm: 1,
-    category: ['padaria']
+    category: ['padaria'],
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const fakeStores: StoreBasic[] = [
     suburb: 'Pinheiros',
     zipCode: '123456-789',
     deliveryRadiusKm: 10,
-    category: ['grocery']
+    category: ['grocery'],
   },
   {
     id: 6,
@@ -53,20 +53,53 @@ const fakeStores: StoreBasic[] = [
     suburb: 'Pinheiros',
     zipCode: '123456-789',
     deliveryRadiusKm: 10,
-    category: ['grocery']
-  }
+    category: ['grocery'],
+  },
+];
+
+const products: Product[] = [
+  {
+    id: 7,
+    name: 'camiseta',
+    description: 'camiseta branca básica',
+    storeId: 1,
+    price: 10,
+    promoPrice: 5,
+  },
+  {
+    id: 8,
+    name: 'bermuda',
+    description: 'bermida branca básica',
+    storeId: 1,
+    price: 15,
+  },
+  {
+    id: 9,
+    name: 'meia',
+    description: 'meia preta',
+    storeId: 1,
+    price: 5,
+  },
+  {
+    id: 10,
+    name: 'camiseta',
+    description: 'camiseta branca básica',
+    storeId: 1,
+    price: 10,
+    promoPrice: 5,
+  },
 ];
 
 function delay(ms: number) {
   new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function fetchStores(): Promise<StoreBasic[]> {
+export async function fetchStores(): Promise<StoreInfo[]> {
   await delay(300);
   return fakeStores;
 }
 
-export async function fetchStore(id: string): Promise<StoreBasic> {
+export async function fetchStore(id: string): Promise<Store> {
   await delay(300);
-  return { ...fakeStores[parseInt(id) - 1] };
+  return { info: fakeStores[parseInt(id) - 1], products: products };
 }

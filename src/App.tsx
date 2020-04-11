@@ -17,29 +17,16 @@ import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 type NestedRouteProps = RouteProps & { routes?: RouteProps[] };
 
 const routes: NestedRouteProps[] = [
+  { path: '/stores/:storeId/products/:productId', component: ProductDetail },
   {
     path: '/stores/:storeId',
     component: StoreView,
-    routes: [{ path: '/products/:productId', component: ProductDetail }],
   },
   {
     path: '/',
     component: StoreList,
   },
 ];
-
-function RouteWithSubRoutes(route: NestedRouteProps) {
-  return (
-    <Route
-      path={route.path}
-      render={props => (
-        // pass the sub-routes down to keep nesting
-        //@ts-ignore
-        <route.component {...props} routes={route.routes} />
-      )}
-    />
-  );
-}
 
 function App(): React.ReactElement {
   return (
@@ -68,7 +55,7 @@ function App(): React.ReactElement {
       <main>
         <Switch>
           {routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route} />
+            <Route key={i} {...route} />
           ))}
         </Switch>
       </main>

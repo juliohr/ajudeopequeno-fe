@@ -3,7 +3,7 @@ import styles from './StoreView.module.css';
 import logo from '../storeLogo.png';
 import ProductsGrid from './ProductsGrid';
 import { Store, Product, Cart, Quantity } from '../Types';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { withRouter, RouteComponentProps, RouteProps } from 'react-router-dom';
 import { fetchStore } from '../MockApi';
 
 type StoreState = {
@@ -13,10 +13,10 @@ type StoreState = {
 type Params = {
   storeId: string;
 };
-class StoreView extends React.Component<
-  RouteComponentProps<Params>,
-  StoreState
-> {
+
+type OwnProps = { routes: RouteProps[] };
+type Props = RouteComponentProps<Params> & OwnProps;
+class StoreView extends React.Component<Props, StoreState> {
   state: StoreState = {
     store: null,
     cart: [],

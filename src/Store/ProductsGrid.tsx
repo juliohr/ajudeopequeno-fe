@@ -2,7 +2,6 @@ import React from 'react';
 import { Product } from '../Types';
 import styles from './ProductsGrid.module.css';
 import productImg from './basic-tee.jpg';
-import Card from 'react-bootstrap/Card';
 
 function ProductsGrid({
   products,
@@ -11,22 +10,29 @@ function ProductsGrid({
 }): React.ReactElement {
   return (
     <div className={styles.productsGridContaienr}>
-      <ul>
+      <ul className={styles.productList}>
         {products.map((product: Product) => {
+          const priceStyle = product.promoPrice
+            ? styles.strikethroughPrice
+            : styles.price;
           return (
-            <li key={product.id}>
-              <Card className={styles.productItem}>
-                <Card.Img variant="top" src={productImg} />
-                <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>R$: {product.price}</Card.Text>
+            <li key={product.id} className={styles.productItem}>
+              <div>
+                <img
+                  className={styles.productImg}
+                  alt="imagem do produto"
+                  src={productImg}
+                />
+                <div className={styles.title}>{product.name}</div>
+                <div className={styles.priceWrapper}>
+                  <div className={priceStyle}>R$: {product.price}</div>
                   {product.promoPrice ? (
-                    <Card.Text className={styles.storeField}>
+                    <div className={styles.promoPrice}>
                       R$: {product.promoPrice}
-                    </Card.Text>
+                    </div>
                   ) : null}
-                </Card.Body>
-              </Card>
+                </div>
+              </div>
             </li>
           );
         })}

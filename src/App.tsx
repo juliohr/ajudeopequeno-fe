@@ -4,25 +4,42 @@ import { Button } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
   Link,
+  Route,
   RouteProps,
 } from 'react-router-dom';
 import { FiPower } from 'react-icons/fi';
 import StoreList from './StoreList';
 import StoreView from './Store/StoreView';
+import ProductDetail from './ProductDetail';
 import ajudeoPequeno from './ajude-o-pequeno-logo.png';
 
-const routes: RouteProps[] = [
+type NestedRouteProps = RouteProps & { routes?: RouteProps[] };
+
+const routes: NestedRouteProps[] = [
   {
     path: '/stores/:storeId',
     component: StoreView,
+    routes: [{ path: '/products/:productId', component: ProductDetail }],
   },
   {
     path: '/',
     component: StoreList,
   },
 ];
+
+function RouteWithSubRoutes(route: NestedRouteProps) {
+  return (
+    <Route
+      path={route.path}
+      render={props => (
+        // pass the sub-routes down to keep nesting
+        //@ts-ignore
+        <route.component {...props} routes={route.routes} />
+      )}
+    />
+  );
+}
 
 function App(): React.ReactElement {
   return (
@@ -51,7 +68,7 @@ function App(): React.ReactElement {
       <main>
         <Switch>
           {routes.map((route, i) => (
-            <Route key={i} {...route} />
+            <RouteWithSubRoutes key={i} {...route} />
           ))}
         </Switch>
       </main>

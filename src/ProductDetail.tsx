@@ -8,7 +8,7 @@ type ProductParams = {
 function ProductDetail(
   routeProps: RouteComponentProps<ProductParams>
 ): React.ReactElement {
-  return <div>Hello</div>;
+  return <div>Hello {routeProps.match.params.productId}</div>;
 }
 
 export default ProductDetail;

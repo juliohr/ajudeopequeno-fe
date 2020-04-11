@@ -1,6 +1,7 @@
 .productList {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -36,4 +37,11 @@
 .promoPrice {
   composes: price;
   color: red;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .productItem {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }

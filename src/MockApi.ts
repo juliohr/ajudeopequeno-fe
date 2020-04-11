@@ -101,5 +101,5 @@ export async function fetchStores(): Promise<StoreInfo[]> {
 
 export async function fetchStore(id: string): Promise<Store> {
   await delay(300);
-  return { info: fakeStores[parseInt(id) - 1], products: products };
+  return { ...fakeStores[parseInt(id) - 1], products: products };
 }

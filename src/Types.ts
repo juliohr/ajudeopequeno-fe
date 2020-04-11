@@ -18,10 +18,7 @@ export type Product = {
   readonly promoPrice?: number;
 };
 
-export type Store = {
-  readonly info: StoreInfo;
-  readonly products: Product[];
-};
+export type Store = StoreInfo & { products: Product[] };
 
 export type Quantity = number;
 

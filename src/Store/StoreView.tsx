@@ -36,7 +36,7 @@ class StoreView extends React.Component<Props, StoreState> {
     const { store } = this.state;
 
     if (store) {
-      const { name, address, suburb, deliveryRadiusKm, category } = store.info;
+      const { name, address, suburb, deliveryRadiusKm, category } = store;
       return (
         <div className={styles.storeContainer}>
           <div className={styles.storeInfo}>

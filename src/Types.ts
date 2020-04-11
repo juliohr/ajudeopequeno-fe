@@ -1,4 +1,4 @@
-export type StoreBasic = {
+export type StoreInfo = {
   readonly id: number;
   readonly logoUrl?: string;
   readonly name: string;
@@ -10,8 +10,17 @@ export type StoreBasic = {
 };
 
 export type Product = {
-  name: string;
-  description?: string;
+  readonly id: number;
+  readonly name: string;
+  readonly description?: string;
+  readonly storeId: number;
+  readonly price: number;
+  readonly promoPrice?: number;
+};
+
+export type Store = {
+  readonly info: StoreInfo;
+  readonly products: Product[];
 };
 
 export type Quantity = number;

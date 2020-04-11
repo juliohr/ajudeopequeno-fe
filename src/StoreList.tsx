@@ -3,12 +3,12 @@ import styles from './StoreList.module.css';
 import logo from './storeLogo.png';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { StoreBasic } from './Types';
+import { StoreInfo } from './Types';
 import { fetchStores } from './MockApi';
 import { Link } from 'react-router-dom';
 
 function StoreList(): React.ReactElement {
-  const [stores, setStores] = useState<StoreBasic[]>([]);
+  const [stores, setStores] = useState<StoreInfo[]>([]);
 
   useEffect(() => {
     fetchStores().then(stores => setStores(stores));
@@ -17,7 +17,7 @@ function StoreList(): React.ReactElement {
   return (
     <div className={styles.storeContainer}>
       <ul className={styles.storeList}>
-        {stores.map((store: StoreBasic) => {
+        {stores.map((store: StoreInfo) => {
           return (
             <li key={store.id}>
               <Card className={styles.storeItem}>
@@ -38,7 +38,10 @@ function StoreList(): React.ReactElement {
                   <Card.Text className={styles.storeField}>
                     Categoria: {store.category}
                   </Card.Text>
-                  <Link to={`store/${store.id}`} className={styles.storeDetail}>
+                  <Link
+                    to={`/stores/${store.id}`}
+                    className={styles.storeDetail}
+                  >
                     <Button variant="primary">Entrar na loja</Button>
                   </Link>
                 </Card.Body>

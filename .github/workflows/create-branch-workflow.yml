@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       # Step 2: Create a new npm-refresh branch and push it
       - name: create npm-refresh branch for dependabot
-        run: 
+        run: |
           echo github.event.ref_type
           echo github.event.ref

@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       # Step 2: Create a new npm-refresh branch and push it
       - name: create npm-refresh branch for dependabot
+        if: github.event.ref_type == "branch" && github.event.ref == "ref/npm_refresh"
         run: |
-          echo github.event.ref_type
-          echo github.event.ref
+          git checkout -b npm-refresh
+          git push --set-upstream origin npm-refresh

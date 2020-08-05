@@ -1,0 +1,14 @@
+name: create new branch after npm-refresh merge
+on: delete
+
+jobs:
+  recreate-npm-refresh-branch:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check-out the repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v2
+      # Step 2: Create a new npm-refresh branch and push it
+      - name: create npm-refresh branch for dependabot
+        run: 
+          echo github.event.ref_type
+          echo github.event.ref
